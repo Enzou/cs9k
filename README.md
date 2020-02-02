@@ -18,7 +18,7 @@ Depending on the used adversary (research necessary; either use existing tools o
 
 ### Adversary
 
-- [ ] Setup adversary (e.g. Caldera, Infection Monkey, Atomic Red Team, custom application, ...)
+- [x] Setup adversary (e.g. Caldera, Infection Monkey, Atomic Red Team, custom application, ...)
 - [ ] Configure attack pattern(s)
 - [ ] add _scaling_ mechanism to spawn additional attacking pods
 
@@ -26,3 +26,26 @@ Depending on the used adversary (research necessary; either use existing tools o
 ### Victim
 
 - [ ] Setup target application (OWASP Juice Shop)
+
+
+
+
+## Setup
+
+1. Checkout repository
+2. Start cluster (or use a local minikube cluster using `start_minik.sh`)
+3. Deploy Adversary CnC server with `kubectl apply -f environment/caldera.yaml`
+4. Deploy Adversary clients in cluster with `kubectl apply -f environment/frigate.yaml`
+
+
+## Usage
+
+As soon as the environment is set up the clients (i.e. _frigates_) will connect to the CnC server using a RAT they come equipped with.
+Once the clients are connected, an operation can be started using the Caldera webinterface. which can be reached at 
+For this:
+ 1. navigate to the Caldera webinterface (`minikube ip` and port 31337)
+ 2. open the _Operations_ view under the _Campaign_ tab
+ 3. plan a new operation by clicking on `VIEW` to switch to `Add` mode
+ 4. `Start` operation
+
+
