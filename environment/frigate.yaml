@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frigate
+  namespace: battlefield
   labels:
     app: frigate
 spec:
@@ -11,7 +12,6 @@ spec:
       app: frigate
   template:
     metadata:
-    # namespace: battlefield
       labels:
         app: frigate
     spec:
@@ -20,8 +20,8 @@ spec:
         image: sleshme/cs9k-frigate:latest
         command: ["/bin/bash", "-c"]
         args: ["/tmp/callhome.sh"]
-        #ports:
-        #- containerPort: 80
+        ports:
+        - containerPort: 6000
 
 
 

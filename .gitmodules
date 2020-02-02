@@ -1,0 +1,3 @@
+[submodule "containers/caldera/caldera-src"]
+	path = containers/caldera/caldera-src
+	url = https://github.com/mitre/caldera
