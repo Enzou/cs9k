@@ -28,14 +28,21 @@ Depending on the used adversary (research necessary; either use existing tools o
 - [ ] Setup target application (OWASP Juice Shop)
 
 
+## Prequesits 
+
+* Install istioctl https://istio.io/docs/setup/getting-started/#download
 
 
 ## Setup
 
 1. Checkout repository
 2. Start cluster (or use a local minikube cluster using `start_minik.sh`)
-3. Deploy Adversary CnC server with `kubectl apply -f environment/caldera.yaml`
-4. Deploy Adversary clients in cluster with `kubectl apply -f environment/frigate.yaml`
+3. Install istio on the cluster (default namespace) `istioctl apply manifest`
+4. Activate auto injection `kubectl label namespace default istio-injection=enabled`
+5. Prep/Install Kiali [Kiali Setup](./kiali_setup.md)
+6. Deploy Adversary CnC server with `kubectl create -n default -f environment/caldera.yaml`
+7. Deploy Adversary clients in cluster with `kubectl create -n default -f environment/frigate.yaml`
+
 
 
 ## Usage
@@ -43,7 +50,7 @@ Depending on the used adversary (research necessary; either use existing tools o
 As soon as the environment is set up the clients (i.e. _frigates_) will connect to the CnC server using a RAT they come equipped with.
 Once the clients are connected, an operation can be started using the Caldera webinterface. which can be reached at 
 For this:
- 1. navigate to the Caldera webinterface (`minikube ip` and port 31337)
+ 1. navigate to the Caldera webinterface (`minikube ip` and port 32700)
  2. open the _Operations_ view under the _Campaign_ tab
  3. plan a new operation by clicking on `VIEW` to switch to `Add` mode
  4. `Start` operation
