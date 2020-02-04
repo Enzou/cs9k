@@ -28,7 +28,9 @@ TODO: not sure what happens when we add them via apply
 Credentials for the Frontend, just copy paste the next 3 blocks.. 
 
 >KIALI_USERNAME=$(read -p 'Kiali Username: ' uval && echo -n $uval | base64)
+
 >KIALI_PASSPHRASE=$(read -sp 'Kiali Passphrase: ' pval && echo -n $pval | base64)
+
 
 >NAMESPACE=istio-system
 
@@ -54,7 +56,6 @@ EOF
 ### Start the frontend
 
 >`istioctl dashboard kiali`
- 
 
 
 get kiali ip: 
