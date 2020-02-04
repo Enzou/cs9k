@@ -2,7 +2,7 @@
 
 ### set environment for kiali
 
-Credentials for the Frontend, just copy paste the next 4 blocks.. 
+#Credentials for the Frontend (copy from raw or https://istio.io/docs/tasks/observability/kiali/#create-a-secret) 
 
 >KIALI_USERNAME=$(read -p 'Kiali Username: ' uval && echo -n $uval | base64)
 
