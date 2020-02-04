@@ -7,8 +7,12 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 8888
-    nodePort: 32700
+    - name: webui 
+      port: 8888
+      nodePort: 31337
+    - name: terminal
+      targetPort: 5678
+      port: 5678
   selector:
     app: caldera
 ---
@@ -16,6 +20,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: caldera
+  namespace: battlefield
 spec:
   replicas: 1
   selector:
@@ -28,6 +33,6 @@ spec:
     spec:
       containers:
       - name: caldera
-        image: mitre/caldera:latest
+        image: sleshme/cs9k-caldera:latest
         ports:
         - containerPort: 80
