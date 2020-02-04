@@ -9,7 +9,7 @@ spec:
   ports:
     - name: webui 
       port: 8888
-      nodePort: 31337
+      nodePort: 32700
     - name: terminal
       targetPort: 5678
       port: 5678
