@@ -3,8 +3,11 @@ kind: Service
 metadata:
   name: juice-shop 
 spec:
+  selector:
+    app: victim
   ports:
     - protocol: TCP
       port: 80
       targetPort: 3000
   clusterIP: 10.96.0.42
+  type: LoadBalancer
