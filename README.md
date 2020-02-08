@@ -37,7 +37,7 @@ Depending on the used adversary (research necessary; either use existing tools o
 
 1. Checkout repository
 2. Start cluster (or use a local minikube cluster using `start_minik.sh`)
-3. Install istio on the cluster (default namespace) `istioctl apply manifest`
+3. Install istio on the cluster (default namespace) `istioctl manifest apply`
 4. Activate auto injection `kubectl label namespace default istio-injection=enabled`
 5. Prep/Install Kiali [Kiali Setup](./kiali_setup.md)
 6. Deploy Adversary CnC server with `kubectl create -n default -f environment/caldera.yaml`
