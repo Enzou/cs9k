@@ -2,7 +2,7 @@
 
 - id: pxss
   name: Compromise other systems using this service
-  description: |
+  description: Exploit a persistent XSS vulnerability to infect further systems
   tactic: persistence
   technique:
     attack_id: T1031
@@ -10,5 +10,5 @@
   platforms:
     linux:
       sh:
-        command: python persisted-xss.py
+        command: python3 persisted-xss.py
         payload: persisted-xss.py

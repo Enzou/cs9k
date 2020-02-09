@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
       - name: caldera
-        image: sleshme/cs9k-caldera:latest
+        image: sleshme/cs9k-caldera:xssv2
         ports:
         - containerPort: 80
