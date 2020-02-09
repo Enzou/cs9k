@@ -43,14 +43,14 @@ spec:
   params:
     metrics:
     - name: caldera_sent_bytes # Prometheus metric name
-      instance_name: calderasend.instance.default # Mixer instance name (fully-qualified)
+      instance_name: caldera.instance.battlefield # Mixer instance name (fully-qualified)
       kind: COUNTER
       label_names:
       - source_service
       - source_version
       - destination_version
     - name: caldera_received_bytes # Prometheus metric name
-      instance_name: calderarcv.instance.default # Mixer instance name (fully-qualified)
+      instance_name: caldera.instance.battlefield # Mixer instance name (fully-qualified)
       kind: COUNTER
       label_names:
       - source_service

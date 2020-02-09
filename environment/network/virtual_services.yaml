@@ -20,5 +20,4 @@ spec:
   http:
   - route:
     - destination:
-        host: victom.battlefield.svc.cluster.local
-        subset: v1
+        host: victim.battlefield.svc.cluster.local
