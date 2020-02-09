@@ -1,27 +1,15 @@
 apiVersion: v1
-kind: Service
+kind: ServiceAccount
 metadata:
-  name: caldera
-  labels:
-    app: caldera
-    
-spec:
-  type: NodePort
-  ports:
-    - name: webui 
-      port: 8888
-      nodePort: 32700
-    - name: terminal
-      targetPort: 5678
-      port: 5678
-  selector:
-    app: caldera
+  name: battle-caldera-v2
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: caldera
+  name: caldera-v2
   namespace: battlefield
+  labels: 
+    app: caldera
 spec:
   replicas: 1
   selector:
@@ -32,6 +20,7 @@ spec:
       labels:
         app: caldera
     spec:
+      serviceAccountName: battle-caldera-v2 
       containers:
       - name: caldera
         image: sleshme/cs9k-caldera:latest

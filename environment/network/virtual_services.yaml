@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: caldera
+spec:
+  hosts:
+  - caldera
+  http:
+  - route:
+    - destination:
+        host: caldera.battlefield.svc.cluster.local
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: victim
+spec:
+  hosts:
+  - victim
+  http:
+  - route:
+    - destination:
+        host: victom.battlefield.svc.cluster.local
+        subset: v1
