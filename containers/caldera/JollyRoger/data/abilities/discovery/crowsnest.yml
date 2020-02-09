@@ -1,0 +1,17 @@
+---
+
+- id: crowsnest
+  name: Discover new victims
+  description: Uses nmap to discover services that were network accessible
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Crows Nest
+  platforms:
+    linux:
+      sh:
+        command: |
+          nmap -T5 -n -p 3000 $KUBERNETES_SERVICE_HOST/24
+        parsers:
+          plugins.stockpile.app.parsers.nmap:
+            - source: target.host.ip
