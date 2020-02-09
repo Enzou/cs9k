@@ -10,5 +10,5 @@
   platforms:
     linux:
       sh:
-        command: python placexss.py
-        payload: placexss.py
+        command: python persisted-xss.py
+        payload: persisted-xss.py
