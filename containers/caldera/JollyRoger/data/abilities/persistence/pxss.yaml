@@ -1,0 +1,14 @@
+---
+
+- id: pxss
+  name: Compromise other systems using this service
+  description: |
+  tactic: persistence
+  technique:
+    attack_id: T1031
+    name: Modify Existing Service
+  platforms:
+    linux:
+      sh:
+        command: python placexss.py
+        payload: placexss.py

@@ -1,0 +1,11 @@
+---
+id: davyjones
+name: Davy Jones
+description: Discover landlubbers in range and plunder them
+phases:
+  1:
+    - crowsnest
+  2:
+    - sqli_creds  # get usernames and hashes
+  3:
+    - 90c2efaa-8205-480d-8bb6-61d90dbaf81b #find sensitive files
