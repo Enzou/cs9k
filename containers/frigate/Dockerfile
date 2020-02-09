@@ -2,7 +2,7 @@ FROM ubuntu:latest
 RUN apt update && \
     apt install -y curl && \
     apt install -y python3 && \
-    apt install -y python-pip && \
+    apt install -y python3-pip && \
     apt install -y nmap && \
     apt install -y net-tools && \
     apt install -y iproute2 && \
