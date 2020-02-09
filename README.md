@@ -12,20 +12,20 @@ Depending on the used adversary (research necessary; either use existing tools o
 
 ### Environment
 
-- [ ] Setup Kubernetes environment 
-- [ ] Put tooling for observation of the _battlefield_ in place (Istio + Kiali?)
+- [x] Setup Kubernetes environment 
+- [x] Put tooling for observation of the _battlefield_ in place (Istio + Kiali?)
 
 
 ### Adversary
 
 - [x] Setup adversary (e.g. Caldera, Infection Monkey, Atomic Red Team, custom application, ...)
-- [ ] Configure attack pattern(s)
-- [ ] add _scaling_ mechanism to spawn additional attacking pods
+- [x] Configure attack pattern(s)
+- [ ] ~~add _scaling_ mechanism to spawn additional attacking pods~~
 
 
 ### Victim
 
-- [ ] Setup target application (OWASP Juice Shop)
+- [x] Setup target application (OWASP Juice Shop)
 
 
 ## Prequesits 
