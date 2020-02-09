@@ -39,7 +39,11 @@ Depending on the used adversary (research necessary; either use existing tools o
 1. Checkout repository
 2. Start cluster (or use a local minikube cluster using `start_minik.sh`)
 3. Install istio on the cluster (default namespace) `istioctl manifest apply`
+<<<<<<< HEAD
 4. Activate auto injection `kubectl label namespace battlefield istio-injection=enabled`
+=======
+4. Activate auto injection `kubectl label namespace default istio-injection=enabled`
+>>>>>>> master
 5. Prep/Install Kiali [Kiali Setup](./kiali_setup.md)
 6. Deploy Adversary CnC server with `kubectl create -n battlefield -f environment/caldera.yaml`
 7. Deploy Adversary clients in cluster with `kubectl create -n battlefield -f environment/frigate.yaml`

@@ -1,0 +1,11 @@
+---
+
+id: bfcidr
+name: battlefield
+facts:
+  - trait: net.cidr
+    value: 10.96.0.1/24
+  - trait: target.host.ip
+    value: 192.168.99.105
+  - trait: target.host.port
+    value: 31475
