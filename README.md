@@ -37,19 +37,16 @@ Depending on the used adversary (research necessary; either use existing tools o
 
 
 1. Checkout repository
-2. Start cluster (or use a local minikube cluster using `start_minik.sh`)
-3. Install istio on the cluster (default namespace) `istioctl manifest apply`
-4. Activate auto injection `kubectl label namespace battlefield istio-injection=enabled`
-5. Prep/Install Kiali [Kiali Setup](./kiali_setup.md)
-6. Deploy Adversary CnC server with `kubectl create -n battlefield -f environment/caldera.yaml`
-7. Deploy Adversary clients in cluster with `kubectl create -n battlefield -f environment/frigate.yaml`
+2. Start cluster (or use a local minikube cluster)
+ > ./start_minik.sh
+3. Install istio on the cluster  
+ > ./kiali_init_setup.sh
 
-it usefull to set `battlefiled` as default context. you dont need to add ` -n battlefield` to all the commands.
+4. !!!Prep/Install Kiali [Kiali Setup](./kiali_setup.md). You need to add the Kiali Credentials!
 
- > kubectl config set-context $(kubectl config current-context) --namespace=battlefield
+5. Start Services / configure Network
 
-  > export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
-  > export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+ > ./setup.sh
 
 ## Usage
 
