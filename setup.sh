@@ -8,7 +8,7 @@ kubectl apply -f environment/$NS.yaml
 kubectl config set-context --current --namespace=$NS
 
 # start services
-kubectl apply -f environment/victimv2.yaml
+kubectl apply -f environment/victim_v2.yaml
 kubectl apply -f environment/caldera.yaml
 kubectl apply -f environment/frigate.yaml
 

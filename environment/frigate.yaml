@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frigate
-        image: sleshme/cs9k-frigate:v2
+        image: sleshme/cs9k-frigate:latest
         command: ["/bin/bash", "-c"]
         args: ["/tmp/callhome.sh"]
         ports:
